@@ -2,7 +2,6 @@
 # coding: utf-8
 
 import csv
-import linecache
 
 import requests
 from bs4 import BeautifulSoup
