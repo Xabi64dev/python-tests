@@ -42,10 +42,10 @@ for description in descriptions:
 
  
 # création du fichier data.csv
-en_tete = ['ref', 'cat', 'description']
-with open('data_cdc_desc.csv', 'w') as fichier_csv:
+en_tete = ['ref', 'cat', 'material']
+with open('data_cdc_mpj.csv', 'w') as fichier_csv:
 	writer = csv.writer(fichier_csv, delimiter=',')
 	writer.writerow(en_tete)
 	# zip permet d'itérer sur deux listes à la fois
-	for ref,cat,description in zip(titre_textes,catfly_textes,material_textes):
-		writer.writerow([ref,cat,description])
+	for ref,cat,material in zip(titre_textes,catfly_textes,material_textes):
+		writer.writerow([ref,cat,material])
