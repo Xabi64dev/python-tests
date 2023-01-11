@@ -22,7 +22,10 @@ soup = BeautifulSoup(page, "html.parser")
 titres = soup.find_all("span",class_="editable")
 titre_textes = []
 for titre in titres:
-	titre_textes.append(titre.string)
+	if titre.string == '':
+		break
+	else:
+		titre_textes.append(titre.string)
 
 
 # récupération de toutes les descriptions et separation des catégories
@@ -30,14 +33,18 @@ descriptions = soup.find_all("p",class_="product-desc")
 material_textes = []
 catfly_textes = []
 for description in descriptions:
-	desc = description.string.strip()
-	# print(description.string.strip())
-	pos = desc.find("\n")
-	catfly = desc[0:pos]
-	material = desc.replace(catfly, '')
-	catfly_textes.append(catfly.strip())
-	material_textes.append(material.strip())
-# print(description_textes)
+	if description.string == '\n':
+		print(description.string)
+		break
+	else:
+		desc = description.string.strip()
+		#print(description.string.strip())
+		pos = desc.find("\n")
+		catfly = desc[0:pos]
+		material = desc.replace(catfly, '')
+		catfly_textes.append(catfly.strip())
+		material_textes.append(material.strip())
+		#print(description_textes)
 
 
  
@@ -49,3 +56,6 @@ with open('data_cdc_mpj.csv', 'w') as fichier_csv:
 	# zip permet d'itérer sur deux listes à la fois
 	for ref,cat,material in zip(titre_textes,catfly_textes,material_textes):
 		writer.writerow([ref,cat,material])
+		
+		print([ref,cat,material])
+		
