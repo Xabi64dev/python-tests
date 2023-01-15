@@ -16,6 +16,7 @@ def calc_wl(in_freq):
     freq = in_freq.get_text()
     wl = str(round(300/float(freq)))
     result.set_text(wl)
+    # La bande CB "Normal"
     if 26.965 <= float(freq) <= 27.405:
         band.set_text('CB')
         band_lincoln.set_text('BANDE : A')
