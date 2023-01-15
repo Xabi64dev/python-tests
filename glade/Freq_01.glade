@@ -169,10 +169,12 @@
           <object class="GtkLabel" id="label_info">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">Info</property>
+            <property name="label" translatable="yes">26.965 à 27.405 MHz
+Bande CB</property>
+            <property name="justify">center</property>
             <attributes>
-              <attribute name="font-desc" value="D-DIN 14"/>
-              <attribute name="foreground" value="#ffff9a855554"/>
+              <attribute name="font-desc" value="D-DIN 12"/>
+              <attribute name="foreground" value="#e0e01b1b2424"/>
             </attributes>
           </object>
           <packing>
