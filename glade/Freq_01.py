@@ -46,7 +46,7 @@ def calc_wl(in_freq):
         band.set_text('6x Sup')
         band_lincoln.set_text('BANDE : J')
         info.set_text('29.665 à 30.105 MHz\nR.A 29.665 à 29.695 MHz')
-    #Les inférieurs
+    # Les inférieurs
     elif 26.515 <= float(freq) <= 26.955:
         band.set_text('1x Inf')
         band_lincoln.set_text('BANDE : C')
