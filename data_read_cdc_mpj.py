@@ -6,7 +6,7 @@ import csv
 with open('data_cdc_mpj.csv') as fichier_csv:
     # taille = len(fichier_csv.readlines())
     reader = csv.DictReader(fichier_csv,delimiter=',')
-    motif = input("Motif recherché.... ref or category: ")
+    motif = input("Search motif, ... ref or category : ")
     
     # taille = len(fichier_csv.readlines())
     # print(taille)
@@ -16,5 +16,6 @@ with open('data_cdc_mpj.csv') as fichier_csv:
         valeurs = ligne.values()
         if motif in valeurs:
             print("Ref: " + ligne['ref'] + "\nCategory: " + ligne['cat'] + "\nMaterial:\n" + ligne['material'] + "\n" + "*" * 31)
+            # print(ligne["ref"] + ligne['cat'] + ligne['material'] )
         else:
             continue
