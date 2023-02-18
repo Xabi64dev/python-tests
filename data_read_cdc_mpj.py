@@ -14,8 +14,15 @@ with open('data_cdc_mpj.csv') as fichier_csv:
         # print(len(ligne))
         # print(ligne)
         valeurs = ligne.values()
-        if motif in valeurs:
-            print("Ref: " + ligne['ref'] + "\nCategory: " + ligne['cat'] + "\nMaterial:\n" + ligne['material'] + "\n" + "*" * 31)
+        art = ligne.items()
+        liste_valeurs = list(valeurs)
+        """ print(valeurs)
+        print(art)
+        print(liste_valeurs) """
+        # print("-" * 31 + liste_valeurs[2])
+        for val in liste_valeurs:
+            if motif in val:
+                print("--> " + "Ref: " + ligne['ref'] + "\nCategory: " + ligne['cat'] + "\nMaterial:\n" + ligne['material'] + "\n" + "*" * 31)
             # print(ligne["ref"] + ligne['cat'] + ligne['material'] )
-        else:
-            continue
+            else:
+                continue
